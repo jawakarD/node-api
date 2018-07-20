@@ -1,10 +1,21 @@
+
+
+/*
+ * Primary application file for API
+ *
+ */
+
+
 var http = require('http');
 var https = require('https')
 var url = require('url');
 var config = require('./config');
 var fs = require('fs');
 var StringDecoder = require('string_decoder').StringDecoder;
+var _data = require('./lib/data.js');
 
+
+//----------------------
 //Instantiating the http server
 var httpServer = http.createServer(function(req,res) {
     unifiedServer(req,res);
