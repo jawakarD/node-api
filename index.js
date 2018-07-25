@@ -9,10 +9,12 @@
 var http = require('http');
 var https = require('https')
 var url = require('url');
-var config = require('./config');
+var config = require('./lib/config');
 var fs = require('fs');
 var StringDecoder = require('string_decoder').StringDecoder;
-var _data = require('./lib/data.js');
+// var _data = require('./lib/data.js');
+var handlers = require('./lib/handlers');
+var helpers = require('./lib/helpers');
 
 
 //----------------------
@@ -73,7 +75,7 @@ var unifiedServer = function (req,res) {
             'queryStringObject' : queryStringObject,
             'method' : method,
             'headers' : headers,
-            'payload' : buffer
+            'payload' : helpers.parsedJsonToObjectBuffer(buffer)
         }
 
         choosenHandler(data,function(statusCode,payload) {
@@ -96,16 +98,7 @@ var unifiedServer = function (req,res) {
     });
 };
 
-var handlers  = {};
-
-handlers.hello = function(data,callback) {
-    callback(200,{"wecome":"you most"});
-};
-
-handlers.notFound= function (data,callback) {
-    callback(404);
-};
-
 var router = {
-    'hello' : handlers.hello
+    'hello' : handlers.hello,
+    'users' : handlers.users
 };
