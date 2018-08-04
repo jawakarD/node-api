@@ -92,7 +92,7 @@ var unifiedServer = function (req,res) {
 
             res.end(payloadString);
 
-            console.log(trimmedPath, statusCode);
+            console.log(payloadString, statusCode);
         });
 
     });
@@ -100,5 +100,6 @@ var unifiedServer = function (req,res) {
 
 var router = {
     'hello' : handlers.hello,
-    'users' : handlers.users
+    'users' : handlers.users,
+    'tokens' : handlers.tokens
 };
