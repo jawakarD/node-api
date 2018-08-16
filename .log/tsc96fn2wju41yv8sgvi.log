@@ -1,0 +1,1 @@
+{"check":{"id":"tsc96fn2wju41yv8sgvi","phone":"8668137356","protocol":"https","url":"yahoo.com","method":"get","successCodes":[200,201,301,302],"timeOutSeconds":3,"lastChecked":1534425935615,"state":"up"},"outcome":{"error":false,"responseCode":301},"state":"up","alert":false,"time":1534425935615}
