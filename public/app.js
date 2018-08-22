@@ -1,0 +1,4 @@
+/*
+ * Frontend Logic for application
+ *
+ */
